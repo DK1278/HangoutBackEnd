@@ -1,0 +1,2865 @@
+{
+	"info": {
+		"_postman_id": "6b905df8-bdd1-482f-8bd4-43911c81b52e",
+		"name": "car-details",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27739469"
+	},
+	"item": [
+		{
+			"name": "User Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firsName\":\"Vrajesh 12\", \r\n    \"lastName\":\"Ramani\",\r\n    \"email\":\"vrajesh123456@gmail.com\", \r\n    \"phoneNumber\":\"1485236775\", \r\n    \"code\":\"91\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Otp Verification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkMmRjMDg4YzhkNmExYjM4YWI3ZjEiLCJ0eXBlIjoiZ3Vlc3RVc2VyIiwiaWF0IjoxNzI5OTY1NjEzfQ.2WV5QCNU5WKgm5PZzMUh52_F-TwatWjhvu_GYFuCYx0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\":111111\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/auth/otpVerify",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"auth",
+								"otpVerify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNumber\":\"1485236785\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/auth/forgotPassword",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"auth",
+								"forgotPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updated password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzEzOWYyYTMyMzM4N2NjOTNhNmVlNTQiLCJ0eXBlIjoiZ3Vlc3RVc2VyIiwiaWF0IjoxNzI5NjE2NDQxfQ.VjxtttkQW1_XUDV5h6Uk3wxVhz0QxGrbcSPIcKlRpRo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"111111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/auth/updatePassword",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"auth",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNumber\":\"1481236775\", \r\n    \"password\":\"123456\",\r\n    \"fcmToken\":\"sdasdsadsadsadas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Google Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6ImM4OGQ4MDlmNGRiOTQzZGY1M2RhN2FjY2ZkNDc3NjRkMDViYTM5MWYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI2NDk1Nzg0NzM1MDQtM24xNjY0OTdkbjNmMmJrMGo5aDVyYjVucmZra2ZrdnYuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI2NDk1Nzg0NzM1MDQtZzdkdWprbXRkdGprN3VpZHFyM2ZvbGwzYnJtNWVlczIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDk5NDcyNzQ4NDI3MTIzMDM1NTYiLCJlbWFpbCI6Inhyc3R1ZGlvLmRldkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlhyU3R1ZGlvIExMUCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NJMTFOeE9pdTlXSEFYalNXc3RmNU5RN2s0cVBwVlU1ZWRVYksxU0VjMW1zck5QMkpzPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IlhyU3R1ZGlvIiwiZmFtaWx5X25hbWUiOiJMTFAiLCJpYXQiOjE3Mjk4NTc4NTYsImV4cCI6MTcyOTg2MTQ1Nn0.ssLpWwC_dQpaRjhEz5zzHLXmiHoJQJB7Y5z1ezDaeS8wMxZOqFQkB2tU5WkNFKIZSL0gV6kZZgWe0KnshEYQDwzJtAS7flp9l5NNxptRss5nz61lbMXGSXME5fy-GtwEoVywx7qjXXi3-QCSHRXhOevkrWbPpDMKDqlT4w69hjKKuGEWOZJLryybne3srZ2B3PHFjJ7WVbLgCSXOe2Nc_Wn96FiSYLSHM3zcVEv1VkDAQDeZ51wOh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/auth/googleLogin",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"auth",
+								"googleLogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Complete Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE5MDI1NzgzZTk5YWJmMGI1MzhjZWUiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTc5NTMwN30.-Efm2ia02MuQPLY_ftTl6q2hJhMqGufWf5O37WO9sbQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profileImage",
+									"type": "file",
+									"src": "/C:/Users/Nidhish Ramani/Downloads/Titfuck.jfif"
+								},
+								{
+									"key": "dob",
+									"value": "2000-01-31",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "latitude",
+									"value": "25.2653",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "24.6523",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "sadasdsadsadsad",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/auth/completeProfile",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"auth",
+								"completeProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Edit Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzIxMTYxNTEwMDFlMmVjZTJlMjhkZDciLCJ0eXBlIjoidXNlciIsImlhdCI6MTczMDY0NzkzOH0.9nluGd2rZ9YaH5jeLrcR5yk5iCrXwa5mfwn8DtkuIBw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profileImage",
+									"type": "file",
+									"src": "/C:/Users/Nidhish Ramani/Downloads/blogImg-1730008712504.jfif"
+								},
+								{
+									"key": "dob",
+									"value": "2000-01-31",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "25.2653",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "24.6523",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "sadasdsadsadsad",
+									"type": "text"
+								},
+								{
+									"key": "fcm",
+									"value": "dsfdsfdsfsdfsdfd",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/auth/editProfile",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"auth",
+								"editProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Complete Car Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzEzOWYyYTMyMzM4N2NjOTNhNmVlNTQiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTYxNDgxMH0.ulTXZLkkw5vTtCIW3Ma6onJSx_JvbpriyDNhaEK1BYc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "carImage",
+									"type": "file",
+									"src": "/C:/Users/admin/Downloads/1721047815295.jpg"
+								},
+								{
+									"key": "year",
+									"value": "sadasd",
+									"type": "text"
+								},
+								{
+									"key": "make",
+									"value": "sadasd",
+									"type": "text"
+								},
+								{
+									"key": "model",
+									"value": "asdasdasd",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "asdasdasdasd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/auth/completeCarDetails",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"auth",
+								"completeCarDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFiY2ZiYjgzZTk5YWJmMGIzZDZhYzMiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTk2MDA3N30.5TgG3p0KCruGXTDH6HWaz5MoZNxbN5jczsLua4vDRQs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/auth/getProfile?id=671b284883e99abf0b877a1a",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"auth",
+								"getProfile"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "671b284883e99abf0b877a1a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My car list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxMGU5ZDU0NGZkMTRkNDQzNWNlZDgiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyODEyMjUyNX0.m0xA5mGFQLzK_gDGFxAPGBn2ysckTk_QMM_QAv6b9VU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/auth/getMyCarList",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"auth",
+								"getMyCarList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My block user list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1NjhmNDM2NjU5YzI0M2NjMjRjYTIiLCJ0eXBlIjoidXNlciIsImlhdCI6MTczMTU5NjgzNH0.lDtYXexXLZ6ixFifdcJj1DR3LRRmJe-ScMvXA-V8X0o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/auth/getMyBlockUserList?id=673568f436659c243cc24ca2&page=1&size=1",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"auth",
+								"getMyBlockUserList"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "673568f436659c243cc24ca2"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxNzdiYjRjZGQ0M2VmODZjY2UwODMiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTc5MzUyM30.AvUetumBh5hapFeMrDKMipFNCM3mihOZG2O5QlYwZb0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "test notification",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\":\"cL9hpYdXQgqQ0L8sIzD5s7:APA91bFLqsWATaGp1gk9oeSn-Pv-9vJSyUF3_I0fHsjNg96wuic6qD5hELJEJpY3wtnspf9XoxSxr4XTlA1LyLXWKSphaUFQ1yk0f89xN-E4J_eQuFnUO6U\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/testNotification",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"testNotification"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Deatils",
+			"item": [
+				{
+					"name": "Create Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkMmRjMDg4YzhkNmExYjM4YWI3ZjEiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTk2NTY2NH0.1Ouu2q5M2T-hjarpRe0JN-t1-A6oTPrMks3PbtpPoL0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "eventImage",
+									"type": "file",
+									"src": "/C:/Users/admin/Downloads/1721047815295.jpg"
+								},
+								{
+									"key": "title",
+									"value": "sadasd",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "sdsadas,sdsasdasdd,asdasdasdsa",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "sadasd",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "25.7586",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "52.3658",
+									"type": "text"
+								},
+								{
+									"key": "zipCode",
+									"value": "4255",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "sadasd",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "asdas",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "asdasd",
+									"type": "text"
+								},
+								{
+									"key": "startDate",
+									"value": "2024-10-25",
+									"type": "text"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-10-25",
+									"type": "text"
+								},
+								{
+									"key": "members",
+									"value": "671b1be483e99abf0b7aab9b,671b18c683e99abf0b77994a",
+									"type": "text"
+								},
+								{
+									"key": "sadasdsad",
+									"value": "sadasdasdas",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/createEvent",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"createEvent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzIxMTEzYTEwMDFlMmVjZTJkZDg0NzgiLCJ0eXBlIjoidXNlciIsImlhdCI6MTczMDIyMDQ1OH0.l4f35geiAaWZee_yXJoDTkA5XJ1E7VGpuMP87LIbEF4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "postImage",
+									"type": "file",
+									"src": "/C:/Users/Nidhish Ramani/Downloads/profileImage-1729795905947.jfif"
+								},
+								{
+									"key": "title",
+									"value": "sadsad",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "test 2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/createPost",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"createPost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Organization Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxMGU5ZDU0NGZkMTRkNDQzNWNlZDgiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyODEyMjUyNX0.m0xA5mGFQLzK_gDGFxAPGBn2ysckTk_QMM_QAv6b9VU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "eventImage",
+									"type": "file",
+									"src": "/C:/Users/admin/Downloads/1721047815295.jpg"
+								},
+								{
+									"key": "title",
+									"value": "sadasd",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "sdsadas",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "sadasd",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "25.7586",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "52.3658",
+									"type": "text"
+								},
+								{
+									"key": "zipCode",
+									"value": "4255",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "sadasd",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "asdas",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "asdasd",
+									"type": "text"
+								},
+								{
+									"key": "startDate",
+									"value": "2024-10-25",
+									"type": "text"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-10-25",
+									"type": "text"
+								},
+								{
+									"key": "members",
+									"value": "6701193fb1b26e4cbf2ee1b7,6701193fb1b26e4cbf2ee1b7",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/createOrganizationEvent",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"createOrganizationEvent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Organization",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE5MDI1NzgzZTk5YWJmMGI1MzhjZWUiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTcwMDI5NH0.NbeF4mLqCwUed6lU3gM1yLL_06NZiFUJMGw4rm4KWe4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "documentImage",
+									"type": "file",
+									"src": "/C:/Users/admin/Downloads/1721047815295.jpg"
+								},
+								{
+									"key": "firstName",
+									"value": "test1",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "test1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/registerOrganization",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"registerOrganization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Organization",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFiY2ZiYjgzZTk5YWJmMGIzZDZhYzMiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTkxNDU5Mn0.1VFkp3CL2s5j15KywP_6Zd-OaZr1KDmyoQcEpunvY3c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/getMyOrganization?status=pending",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"getMyOrganization"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "pending"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkMmRjMDg4YzhkNmExYjM4YWI3ZjEiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTk2NTY2NH0.1Ouu2q5M2T-hjarpRe0JN-t1-A6oTPrMks3PbtpPoL0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/getUserEvent?id=671d2dc088c8d6a1b38ab7f1&page=1&size=10",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"getUserEvent"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "671d2dc088c8d6a1b38ab7f1"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Organization Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE5MDI1NzgzZTk5YWJmMGI1MzhjZWUiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTcwMDI5NH0.NbeF4mLqCwUed6lU3gM1yLL_06NZiFUJMGw4rm4KWe4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/getUserOrganizationEvent?id=12&page=1&size=10",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"getUserOrganizationEvent"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "12"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkMmRjMDg4YzhkNmExYjM4YWI3ZjEiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTk2NTY2NH0.1Ouu2q5M2T-hjarpRe0JN-t1-A6oTPrMks3PbtpPoL0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/getMember?page=1&size=100",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"getMember"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzIxMTYxNTEwMDFlMmVjZTJlMjhkZDciLCJ0eXBlIjoidXNlciIsImlhdCI6MTczMDY0NzkzOH0.9nluGd2rZ9YaH5jeLrcR5yk5iCrXwa5mfwn8DtkuIBw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/getAllUser",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"getAllUser"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "12",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM2MzljNzM2NjU5YzI0M2NhNzgwYjUiLCJ0eXBlIjoidXNlciIsImlhdCI6MTczMTYwNzA1Nn0.G8K7pp6-AefPht-cf-edvv0xK-Z74a7GpfefxVSi_1U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/getUserDetails?id=673639c736659c243ca780b5",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"getUserDetails"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "673639c736659c243ca780b5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Member Event Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxMGU5ZDU0NGZkMTRkNDQzNWNlZDgiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyODEyMjUyNX0.m0xA5mGFQLzK_gDGFxAPGBn2ysckTk_QMM_QAv6b9VU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/getMemberEventDetails?id=67011aab9c71c4edb392f6fb",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"getMemberEventDetails"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "67011aab9c71c4edb392f6fb"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Member Organization Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxMGU5ZDU0NGZkMTRkNDQzNWNlZDgiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyODEyMjUyNX0.m0xA5mGFQLzK_gDGFxAPGBn2ysckTk_QMM_QAv6b9VU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/getOrganizationEventDetails?id=67011b2b8d1bf6b1966f81c8",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"getOrganizationEventDetails"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "67011b2b8d1bf6b1966f81c8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get  map event list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzIxMTYxNTEwMDFlMmVjZTJlMjhkZDciLCJ0eXBlIjoidXNlciIsImlhdCI6MTczMDY0NzkzOH0.9nluGd2rZ9YaH5jeLrcR5yk5iCrXwa5mfwn8DtkuIBw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/mapEventList",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"mapEventList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "block adn un block User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxMGU5ZDU0NGZkMTRkNDQzNWNlZDgiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyODEyMjUyNX0.m0xA5mGFQLzK_gDGFxAPGBn2ysckTk_QMM_QAv6b9VU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"67010e9d544fd14d4435ced8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/blockAndUnBlockUser",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"blockAndUnBlockUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxMGU5ZDU0NGZkMTRkNDQzNWNlZDgiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyODEyMjUyNX0.m0xA5mGFQLzK_gDGFxAPGBn2ysckTk_QMM_QAv6b9VU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"reportedUser\":\"6701193fb1b26e4cbf2ee1b7\",\r\n\"reason\":\"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/reportUser",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"reportUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "like post user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzEzNTQ3NjMyMzM4N2NjOTM1YWJkNjYiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTMyMDI4OX0.G6-uqB5a_QqF2jAmkWnx_Le3GuMF1z67AV2zvK6nIw8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"post\":\"670d459404901f4519faeac0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/updateLike",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"updateLike"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "comment user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzA5ZmVhYzExYjU5YmE5YzhiOGU1OWYiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTAxMDI0OH0.Q3GkFlVpr92joZsrkp2xAiRQWqzVNxlu_E08c-OfAHI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"post\":\"670d459404901f4519faeac0\",\r\n\"comment\":\"test1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/addComments",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"addComments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get comment user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzA5ZmVhYzExYjU5YmE5YzhiOGU1OWYiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTAxMDI0OH0.Q3GkFlVpr92joZsrkp2xAiRQWqzVNxlu_E08c-OfAHI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"post\":\"670d459404901f4519faeac0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/getComments?page=1&size=10",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"getComments"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Home screen",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFiY2ZiYjgzZTk5YWJmMGIzZDZhYzMiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTkxNDU5Mn0.1VFkp3CL2s5j15KywP_6Zd-OaZr1KDmyoQcEpunvY3c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"type\":\"event\",\r\n\"page\":1,\r\n\"size\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/homeScreen",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"homeScreen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add Event share count",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/addEventShareCount?id=12",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"addEventShareCount"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add Organization share count",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzEzOWYyYTMyMzM4N2NjOTNhNmVlNTQiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTYxNDgxMH0.ulTXZLkkw5vTtCIW3Ma6onJSx_JvbpriyDNhaEK1BYc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/addOrganizationShareCount?id=670a617d04901f4519faeaaa",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"addOrganizationShareCount"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "670a617d04901f4519faeaaa"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add Post share count",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/addPostShareCount?id=12",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"addPostShareCount"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Follow Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkMmRjMDg4YzhkNmExYjM4YWI3ZjEiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTk2NTY2NH0.1Ouu2q5M2T-hjarpRe0JN-t1-A6oTPrMks3PbtpPoL0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/sendFollowRequest?toUser=671b18c683e99abf0b77994a",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"sendFollowRequest"
+							],
+							"query": [
+								{
+									"key": "toUser",
+									"value": "671b18c683e99abf0b77994a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Follow Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxNzdiYjRjZGQ0M2VmODZjY2UwODMiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTc5MTU2M30.GMED1ppE2ZNS6Wowf7WKkO4QASB3ZPzs776--x6wrWs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/getFollowRequest",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"getFollowRequest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Follow Request Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxNzdiYjRjZGQ0M2VmODZjY2UwODMiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTc5MTU2M30.GMED1ppE2ZNS6Wowf7WKkO4QASB3ZPzs776--x6wrWs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/cancelFollowRequest?id",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"cancelFollowRequest"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update follow request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxNzdiYjRjZGQ0M2VmODZjY2UwODMiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTc5MTI2OX0.AK33T-bySQ0HdggJ9jcvSzAeGklw888zMLwZoOmdiS4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"671a849f1f258dd1e93b2c69\",\r\n    \"status\":\"accept\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/updatedFollowRequest",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"updatedFollowRequest"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6713662967b9b1d9a437be6b",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Un Follow User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzIxMTYxNTEwMDFlMmVjZTJlMjhkZDciLCJ0eXBlIjoidXNlciIsImlhdCI6MTczMDQ2NjM1MH0.G-auR19nk_JYVcypMbkslS2MTbmRJqpQ2ircSkDmNpE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"toUser\":\"6721113a1001e2ece2dd8478\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/unFollowUser",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"unFollowUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzIxMTYxNTEwMDFlMmVjZTJlMjhkZDciLCJ0eXBlIjoidXNlciIsImlhdCI6MTczMDQ2NjM1MH0.G-auR19nk_JYVcypMbkslS2MTbmRJqpQ2ircSkDmNpE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"toUser\":\"6721113a1001e2ece2dd8478\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/removeUser",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"removeUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get My Followrs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzIxMTYxNTEwMDFlMmVjZTJlMjhkZDciLCJ0eXBlIjoidXNlciIsImlhdCI6MTczMDQ2NjM1MH0.G-auR19nk_JYVcypMbkslS2MTbmRJqpQ2ircSkDmNpE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/getMyFollowers?id=672b8e3c36659c243c7337f1",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"getMyFollowers"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "672b8e3c36659c243c7337f1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get My Followings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzIxMTYxNTEwMDFlMmVjZTJlMjhkZDciLCJ0eXBlIjoidXNlciIsImlhdCI6MTczMDQ2NjM1MH0.G-auR19nk_JYVcypMbkslS2MTbmRJqpQ2ircSkDmNpE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/getMyFollowing?id=672116151001e2ece2e28dd7",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"getMyFollowing"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "672116151001e2ece2e28dd7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get My Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkMmRjMDg4YzhkNmExYjM4YWI3ZjEiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTk2NTY2NH0.1Ouu2q5M2T-hjarpRe0JN-t1-A6oTPrMks3PbtpPoL0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/getMyPost?page=1&size=10&id=671d2dc088c8d6a1b38ab7f1",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"getMyPost"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "id",
+									"value": "671d2dc088c8d6a1b38ab7f1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get My Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1NjhmNDM2NjU5YzI0M2NjMjRjYTIiLCJ0eXBlIjoidXNlciIsImlhdCI6MTczMTU5NjgzNH0.lDtYXexXLZ6ixFifdcJj1DR3LRRmJe-ScMvXA-V8X0o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/getMyNotification?page=1&size=10&id=672116151001e2ece2e28dd7",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"getMyNotification"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "id",
+									"value": "672116151001e2ece2e28dd7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Url",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFkMmRjMDg4YzhkNmExYjM4YWI3ZjEiLCJ0eXBlIjoidXNlciIsImlhdCI6MTcyOTk2NTY2NH0.1Ouu2q5M2T-hjarpRe0JN-t1-A6oTPrMks3PbtpPoL0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Nidhish Ramani/Downloads/blogImg-1730008712504.jfif"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://52.36.44.59:5000/v1/user/createUrl",
+							"protocol": "http",
+							"host": [
+								"52",
+								"36",
+								"44",
+								"59"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"createUrl"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "get users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxODRjMjEwNzQ5YzExOWUyYjhmYzkiLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3MjgxNTMwMTJ9.zb3VarKUAkIJeedgIgHTpLSAG5fAld-AnucAaw9qEuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"page\":\"1\", \r\n    \"size\":\"10\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/v1/admin/getUser",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"v1",
+										"admin",
+										"getUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get users details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxODRjMjEwNzQ5YzExOWUyYjhmYzkiLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3MjgxNTMwMTJ9.zb3VarKUAkIJeedgIgHTpLSAG5fAld-AnucAaw9qEuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/v1/admin/getUserDetails",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"v1",
+										"admin",
+										"getUserDetails"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get users details Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxODRjMjEwNzQ5YzExOWUyYjhmYzkiLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3MjgxNTMwMTJ9.zb3VarKUAkIJeedgIgHTpLSAG5fAld-AnucAaw9qEuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"1\",\r\n    \"isActive\":false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/v1/admin/updateUser",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"v1",
+										"admin",
+										"updateUser"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Event",
+					"item": [
+						{
+							"name": "get event",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxODRjMjEwNzQ5YzExOWUyYjhmYzkiLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3MjgxNTMwMTJ9.zb3VarKUAkIJeedgIgHTpLSAG5fAld-AnucAaw9qEuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"page\":\"1\", \r\n    \"size\":\"10\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/v1/admin/getMemberEvent",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"v1",
+										"admin",
+										"getMemberEvent"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get event details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxODRjMjEwNzQ5YzExOWUyYjhmYzkiLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3MjgxNTMwMTJ9.zb3VarKUAkIJeedgIgHTpLSAG5fAld-AnucAaw9qEuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/v1/admin/getMemberEventDetails",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"v1",
+										"admin",
+										"getMemberEventDetails"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update event",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxODRjMjEwNzQ5YzExOWUyYjhmYzkiLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3MjgxNTMwMTJ9.zb3VarKUAkIJeedgIgHTpLSAG5fAld-AnucAaw9qEuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"1\",\r\n    \"isActive\":false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/v1/admin/updateMemberEvent",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"v1",
+										"admin",
+										"updateMemberEvent"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Organization Event",
+					"item": [
+						{
+							"name": "get event",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxODRjMjEwNzQ5YzExOWUyYjhmYzkiLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3MjgxNTMwMTJ9.zb3VarKUAkIJeedgIgHTpLSAG5fAld-AnucAaw9qEuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"page\":\"1\", \r\n    \"size\":\"10\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/v1/admin/getOrganizationEvent",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"v1",
+										"admin",
+										"getOrganizationEvent"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get event details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxODRjMjEwNzQ5YzExOWUyYjhmYzkiLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3MjgxNTMwMTJ9.zb3VarKUAkIJeedgIgHTpLSAG5fAld-AnucAaw9qEuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/v1/admin/getOrganizationDetails",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"v1",
+										"admin",
+										"getOrganizationDetails"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update event",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxODRjMjEwNzQ5YzExOWUyYjhmYzkiLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3MjgxNTMwMTJ9.zb3VarKUAkIJeedgIgHTpLSAG5fAld-AnucAaw9qEuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"1\",\r\n    \"isActive\":false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/v1/admin/updateOrganizationEvent",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"v1",
+										"admin",
+										"updateOrganizationEvent"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Comments",
+					"item": [
+						{
+							"name": "get comments",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxODRjMjEwNzQ5YzExOWUyYjhmYzkiLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3MjgxNTMwMTJ9.zb3VarKUAkIJeedgIgHTpLSAG5fAld-AnucAaw9qEuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"page\":\"1\", \r\n    \"size\":\"10\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/v1/admin/getComments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"v1",
+										"admin",
+										"getComments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get comments details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxODRjMjEwNzQ5YzExOWUyYjhmYzkiLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3MjgxNTMwMTJ9.zb3VarKUAkIJeedgIgHTpLSAG5fAld-AnucAaw9qEuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/v1/admin/getCommentDetails",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"v1",
+										"admin",
+										"getCommentDetails"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update comments",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxODRjMjEwNzQ5YzExOWUyYjhmYzkiLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3MjgxNTMwMTJ9.zb3VarKUAkIJeedgIgHTpLSAG5fAld-AnucAaw9qEuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"1\",\r\n    \"isActive\":false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/v1/admin/updateComments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"v1",
+										"admin",
+										"updateComments"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Organization",
+					"item": [
+						{
+							"name": "get organization request",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzAxODRjMjEwNzQ5YzExOWUyYjhmYzkiLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3MjgxNTMwMTJ9.zb3VarKUAkIJeedgIgHTpLSAG5fAld-AnucAaw9qEuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"page\":\"1\", \r\n    \"size\":\"10\"\r\n    // \"status\":\"pending\" //accept, reject\r\n    // \"search\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/v1/admin/getOrganization",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"v1",
+										"admin",
+										"getOrganization"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update organization reuqest",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFmYzBjY2QyYjdlNTcwZjQzODljNDciLCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE3MzE3NDEzNDV9.3or0Jx8QnocNxitHAD1kyb-b5V8sBVlulrjEVeHu2-I",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"6738442ce00424db420d2a9b\",\r\n    \"status\":\"accept\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://52.36.44.59:5000/v1/admin/updateOrganization",
+									"protocol": "http",
+									"host": [
+										"52",
+										"36",
+										"44",
+										"59"
+									],
+									"port": "5000",
+									"path": [
+										"v1",
+										"admin",
+										"updateOrganization"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"admin\", \r\n    \"email\":\"admin@gmail.com\", \r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/admin/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\", \r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
